@@ -37558,41 +37558,6 @@ const data = [
           }
         ]
 
-
-//Script that only outputs the read Json Objects and formats it into the terminal
-// const result = data.reduce((acc, obj) => {
-//   const sku = obj.Sku;
-//   if (!acc[sku]) {
-//     acc[sku] = {};
-//   }
-//   acc[sku][obj.Attribute] = obj["Attribute Value"];
-//   acc[sku]["Manufacturer Part Number"] = sku;
-//   return acc;
-// }, {});
-
-// console.log(result);
-
-
-//Script that outputs the Json objects into the terminal and creates a file to hold the results called SweetwaterScrape.txt
-//  const fs = require('fs');
-
-// const result = data.reduce((acc, obj) => {
-//   const sku = obj.Sku;
-//   if (!acc[sku]) {
-//     acc[sku] = {};
-//   }
-//   acc[sku][obj.Attribute] = obj["Attribute Value"];
-//   acc[sku]["Manufacturer Part Number"] = sku;
-//   return acc;
-// }, {});
-
-// console.log(result);
-
-// fs.writeFile('Sweetwater_Scrape.txt', JSON.stringify(result, null, 4), (err) => {
-//   if (err) throw err;
-//   console.log('Output saved to Sweetwater_Scrape.txt');
-// });
-
 const fs = require('fs');
 const csvWriter = require('csv-write-stream');
 const writer = csvWriter({ headers: ['Manufacturer Part Number', 'Attribute 1', 'Attribute 2', 'Attribute 3']});
