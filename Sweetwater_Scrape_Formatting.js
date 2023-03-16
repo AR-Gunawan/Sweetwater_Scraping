@@ -37559,9 +37559,9 @@ const data = [
         ]
 
 const fs = require('fs');
-const csvWriter = require('csv-write-stream');
-const writer = csvWriter({ headers: ['Manufacturer Part Number', 'Attribute 1', 'Attribute 2', 'Attribute 3']});
-writer.pipe(fs.createWriteStream('Sweetwater_Scrape.csv'));
+//const csvWriter = require('csv-write-stream');
+//const writer = csvWriter({ headers: ['Manufacturer Part Number', 'Attribute 1', 'Attribute 2', 'Attribute 3']});
+//writer.pipe(fs.createWriteStream('Sweetwater_Scrape.csv'));
 
 const result = data.reduce((acc, obj) => {
   const sku = obj.Sku;
@@ -37573,9 +37573,10 @@ const result = data.reduce((acc, obj) => {
   return acc;
 }, {});
 
-for (const sku in result) {
-  writer.write(result[sku]);
-}
-writer.end();
+// for (const sku in result) {
+//   writer.write(result[sku]);
+// }
+// writer.end();
 
-console.log('Output saved to Sweetwater_Scrape.csv');
+console.log(result)
+//console.log('Output saved to Sweetwater_Scrape.csv');
